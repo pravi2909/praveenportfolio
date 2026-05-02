@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Praveen Veeramachaneni – AI Project Manager Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0d1117;
+  --gold: #c9933a;
+  --gold-light: #e8b96a;
+  --silver: #8d99ae;
+  --bg: #f8f5f0;
+  --white: #ffffff;
+  --green: #2e7d52;
+  --card-shadow: 0 4px 28px rgba(13,17,23,0.09);
+
+  /* Skill category colours */
+  --cat-pm-bg: #eef4fb;      --cat-pm-border: #3a78c9;  --cat-pm-text: #1a4a8a;
+  --cat-ai-bg: #f0ebfa;      --cat-ai-border: #7c4dbd;  --cat-ai-text: #4a2080;
+  --cat-cloud-bg: #e8f6fb;   --cat-cloud-border: #1a9bbf; --cat-cloud-text: #0a5f7a;
+  --cat-fin-bg: #edfaf4;     --cat-fin-border: #2e9e6a;  --cat-fin-text: #1a6040;
+  --cat-tool-bg: #faf3e8;    --cat-tool-border: #c9933a; --cat-tool-text: #7a5010;
+  --cat-doc-bg: #faf0f0;     --cat-doc-border: #c94040;  --cat-doc-text: #7a2020;
+  --cat-cert-bg: #f5f0fa;    --cat-cert-border: #9a6abf; --cat-cert-text: #5a2a8a;
+  --cat-domain-bg: #f0f4ee;  --cat-domain-border: #5a8a40; --cat-domain-text: #2a5020;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7;}
+
+/* ── HEADER ── */
+header{background:var(--ink);color:var(--white);position:relative;overflow:hidden;}
+.hdr-lines{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 38px,rgba(201,147,58,.04) 38px,rgba(201,147,58,.04) 40px);z-index:1;}
+.hdr-inner{max-width:1100px;margin:auto;padding:60px 40px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;position:relative;z-index:2;}
+.hdr-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+header h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:900;line-height:1.1;color:var(--white);margin-bottom:12px;}
+header h1 span{color:var(--gold);}
+.hdr-sub{font-size:14.5px;color:#b0bcc8;max-width:520px;line-height:1.65;margin-bottom:26px;}
+.hdr-contacts{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;}
+.hdr-contacts a{color:var(--gold-light);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.hdr-contacts a:hover{color:var(--white);}
+.stats-box{display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,.04);border:1px solid rgba(201,147,58,.22);border-radius:14px;padding:28px 32px;min-width:190px;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);display:block;line-height:1;}
+.stat-lbl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8d99ae;margin-top:3px;display:block;}
+
+/* ── NAV ── */
+nav{background:var(--white);border-bottom:1px solid #e0d9cf;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.nav-inner{max-width:1100px;margin:auto;padding:0 40px;display:flex;overflow-x:auto;}
+.nav-inner a{display:block;padding:15px 16px;font-size:13px;font-weight:500;color:#8d99ae;text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;}
+.nav-inner a:hover{color:var(--ink);border-bottom-color:var(--gold);}
+
+/* ── LAYOUT ── */
+.container{max-width:1100px;margin:auto;padding:0 40px;}
+section{padding:68px 0 52px;}
+section+section{border-top:1px solid #e0d9cf;}
+.sec-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--ink);margin-bottom:32px;}
+
+/* ── EXEC SUMMARY INTRO ── */
+.exec-intro{background:linear-gradient(130deg,#0d1117 0%,#1a2535 100%);border-left:5px solid var(--gold);border-radius:12px;padding:26px 34px;margin-bottom:30px;color:#ccd6e0;font-size:15px;line-height:1.8;}
+.exec-intro strong{color:var(--gold-light);}
+
+/* ── SUMMARY CARDS ── */
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:0;}
+.sum-card{background:var(--white);border-radius:12px;padding:26px 30px;box-shadow:var(--card-shadow);border-left:4px solid var(--gold);position:relative;overflow:hidden;}
+.sum-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;border-radius:0 0 0 80px;opacity:.04;background:var(--gold);}
+.sum-card h3{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:10px;letter-spacing:.01em;}
+.sum-card p{font-size:13.5px;color:#4d5f72;line-height:1.7;}
+.sum-card p+p{margin-top:8px;}
+
+/* ── KEY IMPACT HIGHLIGHTS ── */
+.kih-wrap{margin-top:32px;background:var(--white);border-radius:14px;padding:30px 34px;box-shadow:var(--card-shadow);border-top:4px solid var(--gold);}
+.kih-heading{font-size:13.5px;font-weight:600;color:var(--ink);letter-spacing:.04em;text-transform:uppercase;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid #ede8e0;}
+.kih-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;}
+.kih-item{background:#f8f5f0;border-radius:10px;padding:14px 16px;border-left:3px solid var(--gold);display:flex;flex-direction:column;gap:5px;}
+.kih-num{font-family:'DM Mono',monospace;font-size:13.5px;font-weight:600;color:var(--gold);line-height:1.3;text-transform:uppercase;letter-spacing:.02em;}
+.kih-text{font-size:12.5px;color:#4d5f72;line-height:1.5;}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;}
+.skill-cat{border-radius:12px;padding:22px 26px;box-shadow:var(--card-shadow);}
+.skill-cat-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;padding-bottom:10px;}
+.skill-list{display:flex;flex-direction:column;gap:5px;}
+.skill-item{font-size:13.5px;line-height:1.5;padding:2px 0;}
+.skill-item::before{content:'· ';font-weight:700;margin-right:2px;}
+
+.cat-pm{background:var(--cat-pm-bg);border-top:3px solid var(--cat-pm-border);}
+.cat-pm .skill-cat-title{color:var(--cat-pm-border);border-bottom:1px solid #cce0f5;}
+.cat-pm .skill-item{color:var(--cat-pm-text);}
+.cat-pm .skill-item::before{color:var(--cat-pm-border);}
+
+.cat-ai{background:var(--cat-ai-bg);border-top:3px solid var(--cat-ai-border);}
+.cat-ai .skill-cat-title{color:var(--cat-ai-border);border-bottom:1px solid #d8c8f0;}
+.cat-ai .skill-item{color:var(--cat-ai-text);}
+.cat-ai .skill-item::before{color:var(--cat-ai-border);}
+
+.cat-cloud{background:var(--cat-cloud-bg);border-top:3px solid var(--cat-cloud-border);}
+.cat-cloud .skill-cat-title{color:var(--cat-cloud-border);border-bottom:1px solid #b8e0f0;}
+.cat-cloud .skill-item{color:var(--cat-cloud-text);}
+.cat-cloud .skill-item::before{color:var(--cat-cloud-border);}
+
+.cat-fin{background:var(--cat-fin-bg);border-top:3px solid var(--cat-fin-border);}
+.cat-fin .skill-cat-title{color:var(--cat-fin-border);border-bottom:1px solid #b0e8d0;}
+.cat-fin .skill-item{color:var(--cat-fin-text);}
+.cat-fin .skill-item::before{color:var(--cat-fin-border);}
+
+.cat-tool{background:var(--cat-tool-bg);border-top:3px solid var(--cat-tool-border);}
+.cat-tool .skill-cat-title{color:var(--cat-tool-border);border-bottom:1px solid #ecd8b0;}
+.cat-tool .skill-item{color:var(--cat-tool-text);}
+.cat-tool .skill-item::before{color:var(--cat-tool-border);}
+
+.cat-doc{background:var(--cat-doc-bg);border-top:3px solid var(--cat-doc-border);}
+.cat-doc .skill-cat-title{color:var(--cat-doc-border);border-bottom:1px solid #f0c8c8;}
+.cat-doc .skill-item{color:var(--cat-doc-text);}
+.cat-doc .skill-item::before{color:var(--cat-doc-border);}
+
+.cat-cert{background:var(--cat-cert-bg);border-top:3px solid var(--cat-cert-border);}
+.cat-cert .skill-cat-title{color:var(--cat-cert-border);border-bottom:1px solid #d8c0f0;}
+.cat-cert .skill-item{color:var(--cat-cert-text);}
+.cat-cert .skill-item::before{color:var(--cat-cert-border);}
+
+.cat-domain{background:var(--cat-domain-bg);border-top:3px solid var(--cat-domain-border);}
+.cat-domain .skill-cat-title{color:var(--cat-domain-border);border-bottom:1px solid #c0d8b0;}
+.cat-domain .skill-item{color:var(--cat-domain-text);}
+.cat-domain .skill-item::before{color:var(--cat-domain-border);}
+
+/* ── PROJECT CARDS ── */
+.projects-list{display:flex;flex-direction:column;gap:44px;}
+.project-card{background:var(--white);border-radius:16px;box-shadow:var(--card-shadow);overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.project-card:hover{transform:translateY(-3px);box-shadow:0 12px 44px rgba(13,17,23,.14);}
+.proj-hdr{background:var(--ink);padding:26px 34px 22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;}
+.proj-badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.proj-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--white);margin-bottom:5px;line-height:1.3;}
+.proj-role{font-size:13px;color:#8d99ae;}
+.proj-period{background:rgba(201,147,58,.16);border:1px solid rgba(201,147,58,.32);color:var(--gold-light);padding:5px 13px;border-radius:20px;font-size:11.5px;font-family:'DM Mono',monospace;white-space:nowrap;align-self:flex-start;}
+.proj-body{padding:28px 34px;}
+.proj-about{font-size:13px;color:#7a8a9a;margin-bottom:20px;padding:10px 14px;background:#f8f5f0;border-radius:8px;border-left:3px solid #e0d5c5;}
+.proj-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+.proj-sec-lbl{font-size:10.5px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:9px;}
+.proj-body p,.proj-body li{font-size:13.5px;color:#3d4e5e;line-height:1.7;}
+.proj-body ul{padding-left:16px;}
+.proj-body li{margin-bottom:4px;}
+
+/* Risk rows */
+.risk-list{display:flex;flex-direction:column;gap:8px;}
+.risk-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;background:#fdf8f4;border-radius:8px;padding:10px 13px;border-left:3px solid var(--gold);}
+.risk-challenge{font-size:13px;color:#4a5568;line-height:1.5;}
+.risk-skill-label{font-size:10.5px;font-family:'DM Mono',monospace;color:#8d99ae;margin-top:2px;}
+.risk-badge{font-family:'DM Mono',monospace;font-size:10.5px;background:#e8f5ee;color:#2e7d52;border:1px solid #b0d8c0;padding:3px 10px;border-radius:12px;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+
+/* Outcomes */
+.outcome-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px;}
+.chip{background:#f0faf4;border:1px solid #a8d5bc;color:#2e7d52;font-family:'DM Mono',monospace;font-size:11.5px;padding:5px 12px;border-radius:20px;}
+.chip::before{content:'↑ ';}
+
+/* Tech strip */
+.tech-strip{background:#f3f0ec;border-top:1px solid #e4ddd5;padding:15px 34px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.tech-lbl{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#8d99ae;white-space:nowrap;}
+.tech-tag{background:#1a2332;color:#90caf9;font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;}
+
+/* ── ACHIEVEMENTS ── */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border:1px solid #e4ddd5;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);}
+.ach-card{padding:28px 32px;display:flex;gap:18px;align-items:flex-start;border-right:1px solid #e4ddd5;border-bottom:1px solid #e4ddd5;background:var(--white);transition:background .2s;}
+.ach-card:hover{background:#fdf9f4;}
+.ach-icon-wrap{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.ach-gold{background:#fdf3e3;border:1px solid #e8c87a;}
+.ach-silver{background:#f0f4f8;border:1px solid #a8bccc;}
+.ach-blue{background:#eaf2fb;border:1px solid #7aaedc;}
+.ach-green{background:#edf8f2;border:1px solid #7acca0;}
+.ach-title{font-weight:600;font-size:14px;color:var(--ink);margin-bottom:6px;line-height:1.3;}
+.ach-year{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gold);letter-spacing:.1em;margin-bottom:6px;}
+.ach-desc{font-size:13px;color:#5a6878;line-height:1.6;}
+
+/* ── QUALIFICATIONS ── */
+.qual-layout{display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:start;}
+.qual-edu{background:var(--ink);border-radius:14px;padding:32px 28px;color:var(--white);}
+.qual-edu-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:18px;}
+.qual-edu-degree{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;line-height:1.3;color:var(--white);margin-bottom:8px;}
+.qual-edu-sub{font-size:13px;color:#8d99ae;line-height:1.6;}
+.qual-edu-icon{font-size:44px;margin-bottom:18px;display:block;}
+.cert-list{display:flex;flex-direction:column;gap:14px;}
+.cert-row{background:var(--white);border-radius:12px;padding:18px 22px;box-shadow:var(--card-shadow);display:flex;align-items:center;gap:16px;border-left:4px solid transparent;}
+.cert-pm{border-left-color:#3a78c9;}
+.cert-scrum{border-left-color:#7c4dbd;}
+.cert-li{border-left-color:#c9933a;}
+.cert-icon{font-size:26px;flex-shrink:0;}
+.cert-name{font-weight:600;font-size:14.5px;color:var(--ink);}
+.cert-body{font-size:12.5px;color:#6a7a8d;margin-top:2px;}
+.cert-badge{font-family:'DM Mono',monospace;font-size:10px;background:#eef4fb;color:#3a78c9;border:1px solid #b0cce8;padding:2px 9px;border-radius:10px;display:inline-block;margin-top:5px;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:#8d99ae;text-align:center;padding:36px 20px;font-size:13px;margin-top:72px;}
+footer strong{color:var(--gold);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:780px){
+  .hdr-inner,.summary-grid,.proj-2col,.qual-layout{grid-template-columns:1fr;}
+  .proj-hdr{grid-template-columns:1fr;}
+  .container,.nav-inner{padding:0 18px;}
+  section{padding:48px 0 36px;}
+  .proj-body,.tech-strip{padding:20px 18px;}
+  .proj-hdr{padding:20px 18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr-lines"></div>
+  <div class="hdr-inner">
+    <div>
+      <div class="hdr-eyebrow">Professional Portfolio · AI-Driven Project Management</div>
+      <h1>Praveen <span>Veeramachaneni</span></h1>
+      <p class="hdr-sub">Strategic AI Project Manager (PMP) · 15+ years transforming Banking, FinTech, Insurance & Asset Management across UAE, South Africa, UK, EMEA & APAC.</p>
+      <div class="hdr-contacts">
+        <a href="mailto:netpravikumar@gmail.com">✉ netpravikumar@gmail.com</a>
+        <a href="https://linkedin.com/in/praveen-v-6003bab5" target="_blank">🔗 LinkedIn</a>
+        <a href="tel:+971523402793">📞 +971 52 340 2793 · UAE</a>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="stat"><span class="stat-num">15+</span><span class="stat-lbl">Years in IT</span></div>
+      <div class="stat"><span class="stat-num">8+</span><span class="stat-lbl">AI & Digital Programs</span></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-lbl">Countries Served</span></div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-lbl">Industries Delivered</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#summary">Summary</a>
+    <a href="#skills">Skills & Tech</a>
+    <a href="#projects">Key Projects</a>
+    <a href="#achievements">Recognition</a>
+    <a href="#education">Qualifications</a>
+  </div>
+</nav>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="container">
+    <div class="sec-label">Who I Am</div>
+    <div class="sec-title">Executive Summary</div>
+
+    <div class="summary-grid">
+
+      <div class="sum-card">
+        <h3>🔷 Financial Services Specialist</h3>
+        <p>Extensive track record across Retail &amp; Commercial Banking, Credit Risk, Payments, BNPL, Asset Management, and Life Insurance. Led major programs for <strong>FNB South Africa, Investec, FNZ/SILICA, ICICI Prudential</strong>, and <strong>SGU/Jahani (UAE)</strong> — bridging complex business requirements with scalable technology delivery.</p>
+        <p>Hands-on understanding of core banking workflows, Loan Origination Systems, payment ecosystems, and regulatory compliance — enabling precise alignment between business priorities and engineering execution.</p>
+      </div>
+
+      <div class="sum-card">
+        <h3>🔷 Programme Governance Expert</h3>
+        <p>PMP-certified with deep expertise in PMO setup, enterprise delivery frameworks, and SteerCo-level governance. Navigated multi-country rollouts with structured RAID management, Agile/Scrum ceremonies, and real-time KPI reporting.</p>
+        <p>Consistent <strong>95%+ on-time delivery</strong> across complex engagements — managing budgets, vendors, and cross-functional teams of 30–40 members across global time zones in regulated banking environments.</p>
+      </div>
+
+      <div class="sum-card">
+        <h3>🔷 Regional Reach: UAE &amp; Africa</h3>
+        <p>Currently leading AI-driven programs in <strong>Dubai, UAE</strong> for Minetech (MTAL), and previously delivered BNPL transformation for UAE client Jahani. Led landmark banking programs across South Africa — FNB, Investec, and Zensar.</p>
+        <p>Broad exposure across <strong>Africa, UAE, UK, EMEA &amp; APAC</strong>, with strong grasp of regional regulatory landscapes, including POPIA (SA), CBUAE frameworks, and FCA-aligned governance for UK/EMEA programs.</p>
+      </div>
+
+      <div class="sum-card">
+        <h3>🔷 AI &amp; Cloud Transformation Leader</h3>
+        <p>8+ years driving AI/ML, cloud-native, and automation programs on <strong>Azure &amp; AWS</strong>. Delivered credit risk engines, mineral intelligence platforms, LLM analytics, and real-time data pipelines — translating emerging technology into measurable business outcomes.</p>
+        <p>Practitioner of data governance, ETL architecture, MLOps/CI-CD delivery, and enterprise automation (20+ RPA processes) — with hands-on experience coordinating data science, engineering, and business teams end-to-end.</p>
+      </div>
+
+    </div>
+
+    <!-- KEY IMPACT HIGHLIGHTS -->
+    <div class="kih-wrap">
+      <div class="kih-heading">🔷 Key Impact Highlights</div>
+      <div class="kih-grid">
+        <div class="kih-item">
+          <span class="kih-num">25 – 30%</span>
+          <span class="kih-text">Credit decision accuracy improved using AI risk models on Azure lending platforms (SGU / Jahani, UAE)</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">24 mo → 6 mo</span>
+          <span class="kih-text">Mineral exploration feasibility timelines cut by 75% — AI intelligence platform, Minetech UAE</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">18 – 20%</span>
+          <span class="kih-text">Payment authorisation rates lifted through Visa/Mastercard gateway modernisation at FNB South Africa</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">95%+</span>
+          <span class="kih-text">On-time milestone delivery sustained across 5+ concurrent multi-country Agile programs</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">20+ Processes</span>
+          <span class="kih-text">RPA-automated across UK, EMEA &amp; APAC — 90%+ business adoption at JM Financial, zero manual fallback</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">3 Regions</span>
+          <span class="kih-text">Large-scale SAP ERP &amp; CRM transformation across Europe, EMEA &amp; APAC — delivered on schedule and within approved budget</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">Audit-Clean</span>
+          <span class="kih-text">Structured AML/KYC compliance frameworks and governance controls that passed all regulatory reviews — no major findings raised across UAE and South Africa audits</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">Controlled Delivery</span>
+          <span class="kih-text">Budget discipline maintained within agreed thresholds across all programs — combining rigorous change control, milestone-based spend tracking, and proactive risk escalation to protect investment</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">Governance First</span>
+          <span class="kih-text">Built and operated PMO governance structures — SteerCo forums, RAID logs, risk registers, and compliance checkpoints — across regulated banking programs in SA, UAE, UK &amp; APAC</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">C-Suite to Team</span>
+          <span class="kih-text">Managed stakeholder alignment across the full spectrum — from board-level SteerCo reporting and executive sponsors to delivery leads, regulators, vendors, and engineering teams across 6 countries</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-label">Capabilities</div>
+    <div class="sec-title">Skills &amp; Technology Stack</div>
+    <div class="skills-grid">
+
+      <div class="skill-cat cat-pm">
+        <div class="skill-cat-title">🏗 Project &amp; Programme Management</div>
+        <div class="skill-list">
+          <span class="skill-item">PMP · CSM Certified</span>
+          <span class="skill-item">Agile / Scrum · SAFe · Waterfall</span>
+          <span class="skill-item">PMO Setup &amp; Governance</span>
+          <span class="skill-item">SteerCo Reporting · RAID Tracking</span>
+          <span class="skill-item">WBS · Gantt · MS Project</span>
+          <span class="skill-item">Risk, Change &amp; Stakeholder Management</span>
+          <span class="skill-item">Budget Control · Capacity Planning</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-ai">
+        <div class="skill-cat-title">🤖 AI / ML &amp; Data</div>
+        <div class="skill-list">
+          <span class="skill-item">AI Credit Risk Engines · LLM Analytics</span>
+          <span class="skill-item">ML Decision Frameworks</span>
+          <span class="skill-item">ETL Pipelines · Data Vault Architecture</span>
+          <span class="skill-item">Geospatial Analytics (GIS)</span>
+          <span class="skill-item">Data Governance &amp; Lineage</span>
+          <span class="skill-item">Business Intelligence · KPI Dashboards</span>
+          <span class="skill-item">Predictive &amp; Decision Analytics</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-cloud">
+        <div class="skill-cat-title">☁️ Cloud &amp; Infrastructure</div>
+        <div class="skill-list">
+          <span class="skill-item">Microsoft Azure · AWS</span>
+          <span class="skill-item">Azure DevOps · CI/CD (MLOps)</span>
+          <span class="skill-item">HA/DR Architecture</span>
+          <span class="skill-item">Hybrid Cloud Transformation</span>
+          <span class="skill-item">IAM · Security Controls</span>
+          <span class="skill-item">HashiCorp Vault · SonarQube</span>
+          <span class="skill-item">Microservices Architecture</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-fin">
+        <div class="skill-cat-title">💳 FinTech &amp; Banking Platforms</div>
+        <div class="skill-list">
+          <span class="skill-item">BNPL · Loan Origination Systems</span>
+          <span class="skill-item">Payment Gateways · Visa / Mastercard</span>
+          <span class="skill-item">AML / KYC · Fraud Detection</span>
+          <span class="skill-item">Credit Risk Frameworks</span>
+          <span class="skill-item">Digital Lending · SME Banking</span>
+          <span class="skill-item">Wealth &amp; Fund Management (FNZ)</span>
+          <span class="skill-item">Regulatory Compliance (POPIA, CBUAE)</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-tool">
+        <div class="skill-cat-title">🛠 Tools &amp; Platforms</div>
+        <div class="skill-list">
+          <span class="skill-item">JIRA · Confluence · SharePoint</span>
+          <span class="skill-item">MS Project · Power BI</span>
+          <span class="skill-item">SAP ERP · MS Dynamics CRM</span>
+          <span class="skill-item">RPA — UiPath / Blue Prism</span>
+          <span class="skill-item">Camunda BPM · Selenium</span>
+          <span class="skill-item">PMO Dashboards (Real-time KPIs)</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-doc">
+        <div class="skill-cat-title">📄 Business Analysis &amp; Documentation</div>
+        <div class="skill-list">
+          <span class="skill-item">BRS · FRS · PDD · SDD</span>
+          <span class="skill-item">User Stories · Epics · Sprint Plans</span>
+          <span class="skill-item">Gap Analysis · NFR Definition</span>
+          <span class="skill-item">Migration Playbooks</span>
+          <span class="skill-item">SIT / UAT Management</span>
+          <span class="skill-item">RCA · Defect Tracking</span>
+        </div>
+      </div>
+
+      <div class="skill-cat cat-domain">
+        <div class="skill-cat-title">🌐 Domain Expertise</div>
+        <div class="skill-list">
+          <span class="skill-item">Retail &amp; Commercial Banking</span>
+          <span class="skill-item">Asset &amp; Fund Management</span>
+          <span class="skill-item">Life Insurance (Claims, Underwriting)</span>
+          <span class="skill-item">NBFC / BNPL / Digital Lending</span>
+          <span class="skill-item">Mining &amp; GIS Intelligence (UAE)</span>
+          <span class="skill-item">Multi-country Enterprise Rollouts</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-label">Case Studies</div>
+    <div class="sec-title">Key Projects — In Depth</div>
+    <div class="projects-list">
+
+      <!-- P1: MINETECH -->
+      <div class="project-card">
+        <div class="proj-hdr">
+          <div>
+            <div class="proj-badge">🇦🇪 UAE · Minetech · Client: MTAL</div>
+            <div class="proj-title">AI-Driven Mineral Intelligence Platform</div>
+            <div class="proj-role">Sr. Project Manager (Contract) · Minetech UAE</div>
+          </div>
+          <div class="proj-period">Oct 2025 – Present</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-2col">
+            <div>
+              <div class="proj-sec-lbl">🔴 Problem Statement</div>
+              <p>MTAL's mineral exploration relied on fragmented geospatial data and manual feasibility processes, with studies taking up to 24 months. There was no centralised intelligence layer to automate mineral qualification or enforce data consistency — limiting competitive exploration speed and investment decision accuracy.</p>
+            </div>
+            <div>
+              <div class="proj-sec-lbl">🎯 Objectives</div>
+              <ul>
+                <li>Build AI-powered mineral intelligence platform for automated qualification</li>
+                <li>Reduce feasibility timelines from 24 months to under 6 months</li>
+                <li>Establish data governance across geospatial and analytics pipelines</li>
+                <li>Phase-gate MVP delivery across AI, GIS, and engineering workstreams</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-bottom:10px;">⚠️ Risks Faced &amp; How Resolved</div>
+          <div class="risk-list">
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Incomplete and inconsistent geospatial data feeds causing model inaccuracies</div>
+                <div class="risk-skill-label">Risk Management · Data Governance</div>
+              </div>
+              <div class="risk-badge">Data Validation Framework</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Misalignment between AI, GIS, and engineering teams on MVP scope and priorities</div>
+                <div class="risk-skill-label">Stakeholder Management · Agile Facilitation</div>
+              </div>
+              <div class="risk-badge">Structured Sprint Ceremonies</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Evolving mineral qualification criteria causing scope creep mid-delivery</div>
+                <div class="risk-skill-label">Change Control · Phase-gate Governance</div>
+              </div>
+              <div class="risk-badge">Change Request Board</div>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-top:22px;margin-bottom:10px;">✅ Outcomes</div>
+          <div class="outcome-chips">
+            <span class="chip">30% Exploration Decision Accuracy</span>
+            <span class="chip">Feasibility: 24 mo → 6 mo</span>
+            <span class="chip">Automated Mineral Qualification Live</span>
+            <span class="chip">100% Data Traceability Achieved</span>
+          </div>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-lbl">Tech Stack ·</span>
+          <span class="tech-tag">Python / ML Models</span>
+          <span class="tech-tag">GIS / ArcGIS</span>
+          <span class="tech-tag">Azure Cloud</span>
+          <span class="tech-tag">ETL Pipelines</span>
+          <span class="tech-tag">Geospatial Analytics</span>
+          <span class="tech-tag">Data Governance Framework</span>
+          <span class="tech-tag">JIRA · Confluence</span>
+          <span class="tech-tag">Power BI Dashboards</span>
+        </div>
+      </div>
+
+      <!-- P2: SGU / JAHANI -->
+      <div class="project-card">
+        <div class="proj-hdr">
+          <div>
+            <div class="proj-badge">🇦🇪 UAE / 🇮🇳 India · SGU Startup, NBFC · Clients: SGU &amp; Jahani</div>
+            <div class="proj-title">AI Credit Risk Platform &amp; BNPL Lending Programme</div>
+            <div class="proj-role">Project Manager · SGU (Startup / NBFC)</div>
+          </div>
+          <div class="proj-period">Jan 2024 – Aug 2025</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-2col">
+            <div>
+              <div class="proj-sec-lbl">🔴 Problem Statement</div>
+              <p>SGU and Jahani needed a scalable BNPL and digital credit platform to compete in the growing UAE/India lending market. Manual credit decisioning was slow, inaccurate, and non-compliant with AML/KYC requirements — with no real-time processing capability or risk-based customer segmentation.</p>
+            </div>
+            <div>
+              <div class="proj-sec-lbl">🎯 Objectives</div>
+              <ul>
+                <li>Deliver cloud-based AI credit decision platform on Azure (real-time)</li>
+                <li>Implement BNPL workflows with payment gateway integrations</li>
+                <li>Establish AML/KYC compliance and vendor governance frameworks</li>
+                <li>Build PMO dashboards for delivery, risk, and financial KPIs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-bottom:10px;">⚠️ Risks Faced &amp; How Resolved</div>
+          <div class="risk-list">
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">AI credit model bias causing high false-positive default rates, impacting approval accuracy</div>
+                <div class="risk-skill-label">Risk Management · QA Governance</div>
+              </div>
+              <div class="risk-badge">Model Validation Gates</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Payment vendor API incompatibilities delaying integration milestones</div>
+                <div class="risk-skill-label">Vendor Management · Technical Coordination</div>
+              </div>
+              <div class="risk-badge">Integration Sandbox Testing</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">AML/KYC regulatory audit readiness across UAE and India jurisdictions simultaneously</div>
+                <div class="risk-skill-label">Compliance Management · Stakeholder Engagement</div>
+              </div>
+              <div class="risk-badge">Compliance Framework Setup</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Startup resource constraints limiting delivery velocity on concurrent workstreams</div>
+                <div class="risk-skill-label">Agile Prioritisation · Capacity Planning</div>
+              </div>
+              <div class="risk-badge">Sprint Backlog Reprioritisation</div>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-top:22px;margin-bottom:10px;">✅ Outcomes</div>
+          <div class="outcome-chips">
+            <span class="chip">40% Loan TAT Reduction</span>
+            <span class="chip">25% Decision Accuracy</span>
+            <span class="chip">20% Approval Rate Improvement</span>
+            <span class="chip">15% Default Risk Reduction</span>
+            <span class="chip">100% Audit Readiness</span>
+            <span class="chip">Zero Compliance Findings</span>
+            <span class="chip">40% Stakeholder Visibility</span>
+          </div>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-lbl">Tech Stack ·</span>
+          <span class="tech-tag">Microsoft Azure</span>
+          <span class="tech-tag">AI/ML Credit Models</span>
+          <span class="tech-tag">REST APIs</span>
+          <span class="tech-tag">Payment Gateways (Stripe/PayFort)</span>
+          <span class="tech-tag">AML/KYC Engine</span>
+          <span class="tech-tag">Power BI (PMO)</span>
+          <span class="tech-tag">JIRA · Confluence</span>
+          <span class="tech-tag">LLM Analytics</span>
+        </div>
+      </div>
+
+      <!-- P3: FNB -->
+      <div class="project-card">
+        <div class="proj-hdr">
+          <div>
+            <div class="proj-badge">🇿🇦 South Africa · Exaze Consulting · Client: First National Bank (FNB)</div>
+            <div class="proj-title">Enterprise Banking Transformation — Digital SME Lending, IAM &amp; Payment Modernisation</div>
+            <div class="proj-role">Account Manager / Project Manager · Exaze Private Limited</div>
+          </div>
+          <div class="proj-period">Apr 2022 – Nov 2023</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-about">FNB (FirstRand Group) is South Africa's oldest bank, operating across 10+ African countries with R5B+ annual revenue and consistently ranked Africa's Best Consumer Digital Bank.</div>
+          <div class="proj-2col">
+            <div>
+              <div class="proj-sec-lbl">🔴 Problem Statement</div>
+              <p>FNB's digital platforms required modernisation across three critical fronts: IAM and cybersecurity hardening for card processing platforms, a new SME digital lending product (FNB Nav), and payment gateway modernisation to improve Visa/Mastercard authorisation rates while integrating fraud detection at scale.</p>
+            </div>
+            <div>
+              <div class="proj-sec-lbl">🎯 Objectives</div>
+              <ul>
+                <li>Implement IAM controls across payment and card processing platforms</li>
+                <li>Deliver FNB Nav: SME digital lending — onboarding, origination, payments</li>
+                <li>Modernise payment gateway with integrated fraud detection (Visa/MC)</li>
+                <li>Lead hybrid cloud transformation across on-prem and cloud environments</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-bottom:10px;">⚠️ Risks Faced &amp; How Resolved</div>
+          <div class="risk-list">
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Downtime risk to live card payment systems during gateway cutover</div>
+                <div class="risk-skill-label">Risk Planning · Business Continuity Management</div>
+              </div>
+              <div class="risk-badge">Parallel Run Strategy</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">IAM rollout disrupting existing user access across card platforms mid-project</div>
+                <div class="risk-skill-label">Change Management · Phased Delivery</div>
+              </div>
+              <div class="risk-badge">Phased Rollout + UAT Gates</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Scope additions to FNB Nav threatening budget envelope and delivery timelines</div>
+                <div class="risk-skill-label">Budget Control · Change Control Governance</div>
+              </div>
+              <div class="risk-badge">Change Control Board</div>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-top:22px;margin-bottom:10px;">✅ Outcomes</div>
+          <div class="outcome-chips">
+            <span class="chip">95%+ On-time Delivery</span>
+            <span class="chip">30% Security Risk Reduction</span>
+            <span class="chip">18% Higher Card Auth Rate</span>
+            <span class="chip">30% Lower Transaction Latency</span>
+            <span class="chip">20% SME Loan Success Rate</span>
+            <span class="chip">Cost Variance &lt;5%</span>
+          </div>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-lbl">Tech Stack ·</span>
+          <span class="tech-tag">Azure · AWS</span>
+          <span class="tech-tag">IAM / PAM</span>
+          <span class="tech-tag">Visa / Mastercard APIs</span>
+          <span class="tech-tag">Fraud Detection Engine</span>
+          <span class="tech-tag">Camunda BPM</span>
+          <span class="tech-tag">HashiCorp Vault</span>
+          <span class="tech-tag">SonarQube</span>
+          <span class="tech-tag">Azure DevOps</span>
+          <span class="tech-tag">Java / J2EE</span>
+          <span class="tech-tag">Hybrid Cloud Infra</span>
+        </div>
+      </div>
+
+      <!-- P4: ZENSAR / FNZ / INVESTEC -->
+      <div class="project-card">
+        <div class="proj-hdr">
+          <div>
+            <div class="proj-badge">🇿🇦 SA · 🇬🇧 UK · 🌍 EMEA/APAC · Zensar Technologies · Clients: FNZ/SILICA, Investec Bank, JM Financial</div>
+            <div class="proj-title">Unified Fund Analytics Platform, Global SAP Rollout &amp; Cloud Migration (13 AMCs)</div>
+            <div class="proj-role">Business Consultant (Project Manager) · Zensar Technologies</div>
+          </div>
+          <div class="proj-period">Apr 2018 – Mar 2022</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-about">FNZ/SILICA manages $2T+ AUM for 1.3M+ investors globally. Investec is a specialist bank/asset manager across SA and UK. JM Financial is a diversified financial services firm with EMEA &amp; APAC operations.</div>
+          <div class="proj-2col">
+            <div>
+              <div class="proj-sec-lbl">🔴 Problem Statement</div>
+              <p>13 AMCs on the FNZ/SILICA platform lacked a unified analytics and regulatory reporting layer. Investec needed high-accuracy risk dashboards. JM Financial required SAP ERP and CRM alignment across global regions. All platforms needed cloud migration to enable resilient HA/DR infrastructure.</p>
+            </div>
+            <div>
+              <div class="proj-sec-lbl">🎯 Objectives</div>
+              <ul>
+                <li>Build unified analytics platform for 13 AMCs — AML/KYC, fund dashboards, regulatory reporting</li>
+                <li>Deliver AWS cloud migration with HA/DR for STANLIB &amp; FNZ platforms</li>
+                <li>SAP ERP + MS Dynamics CRM rollout across UK, EMEA &amp; APAC (JM Financial)</li>
+                <li>Deploy 21 RPA processes; implement CI/CD governance via Azure DevOps</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-bottom:10px;">⚠️ Risks Faced &amp; How Resolved</div>
+          <div class="risk-list">
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Multi-country AML regulatory variance across SA, UK, and India rules</div>
+                <div class="risk-skill-label">Compliance Management · Regulatory Engagement</div>
+              </div>
+              <div class="risk-badge">Localisation Framework Layers</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Data inconsistency across 13 AMC feeds causing ETL pipeline failures</div>
+                <div class="risk-skill-label">Data Governance · Quality Assurance</div>
+              </div>
+              <div class="risk-badge">ETL Validation Gates</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Downtime risk to live fund platforms during AWS migration</div>
+                <div class="risk-skill-label">Risk Planning · Release Management</div>
+              </div>
+              <div class="risk-badge">Blue-Green Deployment Strategy</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">RPA adoption resistance across regional business units in UK and APAC</div>
+                <div class="risk-skill-label">Change Management · Training &amp; Engagement</div>
+              </div>
+              <div class="risk-badge">Structured Change Management Plan</div>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-top:22px;margin-bottom:10px;">✅ Outcomes</div>
+          <div class="outcome-chips">
+            <span class="chip">100% Regulatory Readiness (13 AMCs)</span>
+            <span class="chip">35% Faster Deployments (AWS)</span>
+            <span class="chip">99.95% Uptime (HA/DR)</span>
+            <span class="chip">90%+ RPA Adoption</span>
+            <span class="chip">60% Faster CI/CD</span>
+            <span class="chip">30% Faster Risk Decisions (Investec)</span>
+            <span class="chip">99% Data Accuracy</span>
+          </div>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-lbl">Tech Stack ·</span>
+          <span class="tech-tag">AWS Cloud</span>
+          <span class="tech-tag">Azure DevOps / CI-CD</span>
+          <span class="tech-tag">SAP ERP (S/4HANA)</span>
+          <span class="tech-tag">MS Dynamics CRM</span>
+          <span class="tech-tag">ETL / Data Vault</span>
+          <span class="tech-tag">UiPath / Blue Prism RPA</span>
+          <span class="tech-tag">HA/DR Architecture</span>
+          <span class="tech-tag">AML/KYC Engine</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Java / J2EE</span>
+          <span class="tech-tag">JIRA · Confluence</span>
+        </div>
+      </div>
+
+      <!-- P5: ICICI -->
+      <div class="project-card">
+        <div class="proj-hdr">
+          <div>
+            <div class="proj-badge">🇮🇳 India · ICICI Prudential Life Insurance</div>
+            <div class="proj-title">Insurance Core Transformation — Claims, Underwriting &amp; ETL Data Migration</div>
+            <div class="proj-role">Business Analyst / Sr. Business Analyst · ICICI Prudential Insurance Co. Ltd.</div>
+          </div>
+          <div class="proj-period">Jun 2007 – Dec 2014</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-about">ICICI Prudential Life Insurance is India's largest private life insurer (ICICI Bank × Prudential plc JV), serving millions across Term, ULIP, and savings products.</div>
+          <div class="proj-2col">
+            <div>
+              <div class="proj-sec-lbl">🔴 Problem Statement</div>
+              <p>Legacy insurance workflows for claims, underwriting, and agent onboarding were manual and rework-heavy, with poorly documented requirements leading to high defect rates. ETL migration to a new AMC system required rigorous data validation to ensure 100% integrity at go-live.</p>
+            </div>
+            <div>
+              <div class="proj-sec-lbl">🎯 Objectives</div>
+              <ul>
+                <li>Re-engineer claims, underwriting, and agent onboarding workflows</li>
+                <li>Deliver structured FRS, BRS, and migration playbooks</li>
+                <li>Execute ETL migration with zero data integrity failures</li>
+                <li>Automate financial workflows to reduce manual effort across operations</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-bottom:10px;">⚠️ Risks Faced &amp; How Resolved</div>
+          <div class="risk-list">
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">Incomplete business requirements causing downstream development rework</div>
+                <div class="risk-skill-label">Business Analysis · Requirements Management</div>
+              </div>
+              <div class="risk-badge">Structured Workshop Elicitation</div>
+            </div>
+            <div class="risk-row">
+              <div>
+                <div class="risk-challenge">ETL data integrity failures risking regulatory non-compliance at migration go-live</div>
+                <div class="risk-skill-label">Data Governance · UAT Management</div>
+              </div>
+              <div class="risk-badge">Reconciliation &amp; Validation Gates</div>
+            </div>
+          </div>
+          <div class="proj-sec-lbl" style="margin-top:22px;margin-bottom:10px;">✅ Outcomes</div>
+          <div class="outcome-chips">
+            <span class="chip">30% Rework Reduction</span>
+            <span class="chip">95% UAT Sign-off Rate</span>
+            <span class="chip">98% Defect-free Releases</span>
+            <span class="chip">100% ETL Data Integrity</span>
+            <span class="chip">40% Manual Effort Reduction</span>
+          </div>
+        </div>
+        <div class="tech-strip">
+          <span class="tech-lbl">Tech Stack ·</span>
+          <span class="tech-tag">ETL / Data Migration</span>
+          <span class="tech-tag">Insurance Core Systems</span>
+          <span class="tech-tag">Underwriting APIs</span>
+          <span class="tech-tag">SQL / Data Reconciliation</span>
+          <span class="tech-tag">Workflow Automation</span>
+          <span class="tech-tag">MS Visio · MS Office</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="sec-label">Recognition</div>
+    <div class="sec-title">Awards &amp; Achievements</div>
+    <div class="ach-grid">
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-gold">🏆</div>
+        <div>
+          <div class="ach-year">FNZ · 2020</div>
+          <div class="ach-title">Director's Appreciation Award — R100K</div>
+          <div class="ach-desc">Personally recognised by FNZ Director Billal S. for delivering the first-ever Dynamic Fund Dashboard for 13 AMCs — transforming regulatory visibility across the SILICA platform.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-silver">🥈</div>
+        <div>
+          <div class="ach-year">Investec · 2021</div>
+          <div class="ach-title">2nd Place — Investec Digital Hackathon</div>
+          <div class="ach-desc">Designed a POPIA-compliant digital customer outreach solution in a competitive cross-team hackathon — showcasing innovation at the intersection of data privacy and customer engagement.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-blue">⚙️</div>
+        <div>
+          <div class="ach-year">Zensar Quarterly Awards</div>
+          <div class="ach-title">Cost Management Excellence — RPA</div>
+          <div class="ach-desc">Awarded for leading delivery of 20+ RPA processes across UK, EMEA &amp; APAC — driving 40% reduction in manual effort and significant cost savings for JM Financial operations.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-green">🌍</div>
+        <div>
+          <div class="ach-year">Zensar Quarterly Awards</div>
+          <div class="ach-title">Change Management Excellence — CRM</div>
+          <div class="ach-desc">Recognised for orchestrating the multi-region MS Dynamics CRM rollout for JM Financial, achieving 90%+ adoption across Europe, EMEA &amp; APAC through structured training and change governance.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section id="education">
+  <div class="container">
+    <div class="sec-label">Qualifications</div>
+    <div class="sec-title">Education &amp; Certifications</div>
+    <div class="qual-layout">
+
+      <div class="qual-edu">
+        <span class="qual-edu-icon">🎓</span>
+        <div class="qual-edu-label">Foundation Degree</div>
+        <div class="qual-edu-degree">Bachelor of Science — Computer Science</div>
+        <div class="qual-edu-sub" style="margin-top:12px;">Grounding in software engineering, algorithms, databases, and system design — the technical foundation underpinning 15+ years of IT delivery leadership across global financial services.</div>
+      </div>
+
+      <div class="cert-list">
+        <div class="cert-row cert-pm">
+          <div class="cert-icon">📜</div>
+          <div>
+            <div class="cert-name">Project Management Professional (PMP)</div>
+            <div class="cert-body">PMI-certified · The globally recognised gold standard in project management, covering governance, delivery, risk, and stakeholder frameworks across industries and methodologies.</div>
+            <span class="cert-badge">PMI · Active</span>
+          </div>
+        </div>
+        <div class="cert-row cert-scrum">
+          <div class="cert-icon">🔄</div>
+          <div>
+            <div class="cert-name">Certified Scrum Master (CSM)</div>
+            <div class="cert-body">Scrum Alliance certified · Practitioner of Agile sprint ceremonies, backlog refinement, velocity management, and cross-functional team coaching across 30–40 engineer programs.</div>
+            <span class="cert-badge">Scrum Alliance · Active</span>
+          </div>
+        </div>
+        <div class="cert-row cert-li">
+          <div class="cert-icon">💡</div>
+          <div>
+            <div class="cert-name">Continuous Professional Development</div>
+            <div class="cert-body">Active learner on LinkedIn Learning — covering AI platform delivery, cloud architecture, leadership, and financial services technology to stay current with evolving industry practices.</div>
+            <span class="cert-badge">LinkedIn Learning · Ongoing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Praveen Veeramachaneni</strong> · Strategic AI Project Manager · Dubai, UAE</p>
+  <p style="margin-top:8px;">✉ netpravikumar@gmail.com &nbsp;·&nbsp; 📞 +971 52 340 2793 &nbsp;·&nbsp; <a href="https://linkedin.com/in/praveen-v-6003bab5" style="color:var(--gold);text-decoration:none;">LinkedIn Profile</a></p>
+  <p style="margin-top:16px;font-size:12px;color:#4a5568;">Portfolio v3 · May 2026 · Available for Senior PM / Head of IT-Delivery roles in UAE</p>
+</footer>
+
+</body>
+</html>
