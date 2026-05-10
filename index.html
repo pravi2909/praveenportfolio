@@ -74,7 +74,7 @@ section+section{border-top:1px solid #e0d9cf;}
 /* ── KEY IMPACT HIGHLIGHTS ── */
 .kih-wrap{margin-top:32px;background:var(--white);border-radius:14px;padding:30px 34px;box-shadow:var(--card-shadow);border-top:4px solid var(--gold);}
 .kih-heading{font-size:13.5px;font-weight:600;color:var(--ink);letter-spacing:.04em;text-transform:uppercase;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid #ede8e0;}
-.kih-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;}
+.kih-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
 .kih-item{background:#f8f5f0;border-radius:10px;padding:14px 16px;border-left:3px solid var(--gold);display:flex;flex-direction:column;gap:5px;}
 .kih-num{font-family:'DM Mono',monospace;font-size:13.5px;font-weight:600;color:var(--gold);line-height:1.3;text-transform:uppercase;letter-spacing:.02em;}
 .kih-text{font-size:12.5px;color:#4d5f72;line-height:1.5;}
@@ -162,8 +162,8 @@ section+section{border-top:1px solid #e0d9cf;}
 .tech-tag{background:#1a2332;color:#90caf9;font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;}
 
 /* ── ACHIEVEMENTS ── */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border:1px solid #e4ddd5;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);}
-.ach-card{padding:28px 32px;display:flex;gap:18px;align-items:flex-start;border-right:1px solid #e4ddd5;border-bottom:1px solid #e4ddd5;background:var(--white);transition:background .2s;}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #e4ddd5;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);}
+.ach-card{padding:24px 26px;display:flex;gap:14px;align-items:flex-start;border-right:1px solid #e4ddd5;border-bottom:1px solid #e4ddd5;background:var(--white);transition:background .2s;}
 .ach-card:hover{background:#fdf9f4;}
 .ach-icon-wrap{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .ach-gold{background:#fdf3e3;border:1px solid #e8c87a;}
@@ -186,6 +186,7 @@ section+section{border-top:1px solid #e0d9cf;}
 .cert-pm{border-left-color:#3a78c9;}
 .cert-scrum{border-left-color:#7c4dbd;}
 .cert-li{border-left-color:#c9933a;}
+.cert-ai{border-left-color:#1a9bbf;}
 .cert-icon{font-size:26px;flex-shrink:0;}
 .cert-name{font-weight:600;font-size:14.5px;color:var(--ink);}
 .cert-body{font-size:12.5px;color:#6a7a8d;margin-top:2px;}
@@ -203,6 +204,8 @@ footer strong{color:var(--gold);}
   section{padding:48px 0 36px;}
   .proj-body,.tech-strip{padding:20px 18px;}
   .proj-hdr{padding:20px 18px;}
+  .kih-grid{grid-template-columns:repeat(2,1fr);}
+  .ach-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -252,7 +255,7 @@ footer strong{color:var(--gold);}
 
       <div class="sum-card">
         <h3>🔷 Financial Services Specialist</h3>
-        <p>Extensive track record across Retail &amp; Commercial Banking, Credit Risk, Payments, BNPL, Asset Management, and Life Insurance. Led major programs for <strong>FNB South Africa, Investec, FNZ/SILICA, ICICI Prudential</strong>, and <strong>SGU/Jahani (UAE)</strong> — bridging complex business requirements with scalable technology delivery.</p>
+        <p>Extensive track record across Retail &amp; Commercial Banking, Credit Risk, Payments, BNPL, Asset Management, and Life Insurance. Led major programs for <strong>FNB South Africa, Investec, FNZ/SILICA, ICICI Prudential</strong>, and <strong>UAE &amp; Indian startup clients</strong> — bridging complex business requirements with scalable technology delivery.</p>
         <p>Hands-on understanding of core banking workflows, Loan Origination Systems, payment ecosystems, and regulatory compliance — enabling precise alignment between business priorities and engineering execution.</p>
       </div>
 
@@ -264,14 +267,14 @@ footer strong{color:var(--gold);}
 
       <div class="sum-card">
         <h3>🔷 Regional Reach: UAE &amp; Africa</h3>
-        <p>Currently leading AI-driven programs in <strong>Dubai, UAE</strong> for Minetech (MTAL), and previously delivered BNPL transformation for UAE client Jahani. Led landmark banking programs across South Africa — FNB, Investec, and Zensar.</p>
+        <p>Currently leading AI-driven programs in <strong>Dubai, UAE</strong> for Minetech (MTAL), and previously delivered BNPL and digital credit transformation for UAE &amp; Indian startup clients. Led landmark banking programs across South Africa — FNB, Investec, and Zensar.</p>
         <p>Broad exposure across <strong>Africa, UAE, UK, EMEA &amp; APAC</strong>, with strong grasp of regional regulatory landscapes, including POPIA (SA), CBUAE frameworks, and FCA-aligned governance for UK/EMEA programs.</p>
       </div>
 
       <div class="sum-card">
         <h3>🔷 AI &amp; Cloud Transformation Leader</h3>
-        <p>8+ years driving AI/ML, cloud-native, and automation programs on <strong>Azure &amp; AWS</strong>. Delivered credit risk engines, mineral intelligence platforms, LLM analytics, and real-time data pipelines — translating emerging technology into measurable business outcomes.</p>
-        <p>Practitioner of data governance, ETL architecture, MLOps/CI-CD delivery, and enterprise automation (20+ RPA processes) — with hands-on experience coordinating data science, engineering, and business teams end-to-end.</p>
+        <p>8+ years driving AI/ML, cloud-native, and automation programs on <strong>Azure &amp; AWS</strong>. Delivered AI credit risk engines, mineral intelligence platforms, LLM analytics, digital banking platforms, SME lending journeys, and card &amp; payment processing systems — translating emerging technology into measurable business outcomes.</p>
+        <p>Practitioner of data governance, ETL architecture, MLOps/CI-CD delivery, and enterprise automation (20+ RPA processes) — with hands-on experience coordinating data science, engineering, payments, and business teams end-to-end across regulated environments.</p>
       </div>
 
     </div>
@@ -282,7 +285,7 @@ footer strong{color:var(--gold);}
       <div class="kih-grid">
         <div class="kih-item">
           <span class="kih-num">25 – 30%</span>
-          <span class="kih-text">Credit decision accuracy improved using AI risk models on Azure lending platforms (SGU / Jahani, UAE)</span>
+          <span class="kih-text">Credit decision accuracy improved using AI risk models on Azure — UAE &amp; Indian startup lending platforms</span>
         </div>
         <div class="kih-item">
           <span class="kih-num">24 mo → 6 mo</span>
@@ -291,6 +294,10 @@ footer strong{color:var(--gold);}
         <div class="kih-item">
           <span class="kih-num">18 – 20%</span>
           <span class="kih-text">Payment authorisation rates lifted through Visa/Mastercard gateway modernisation at FNB South Africa</span>
+        </div>
+        <div class="kih-item">
+          <span class="kih-num">40%</span>
+          <span class="kih-text">Loan turnaround time reduced via Azure-based AI credit platform integrating real-time alternative data APIs</span>
         </div>
         <div class="kih-item">
           <span class="kih-num">95%+</span>
@@ -305,20 +312,24 @@ footer strong{color:var(--gold);}
           <span class="kih-text">Large-scale SAP ERP &amp; CRM transformation across Europe, EMEA &amp; APAC — delivered on schedule and within approved budget</span>
         </div>
         <div class="kih-item">
+          <span class="kih-num">20% Success Rate</span>
+          <span class="kih-text">SME digital lending platform (FNB Nav) improved loan success rates through streamlined onboarding and origination workflows</span>
+        </div>
+        <div class="kih-item">
           <span class="kih-num">Audit-Clean</span>
-          <span class="kih-text">Structured AML/KYC compliance frameworks and governance controls that passed all regulatory reviews — no major findings raised across UAE and South Africa audits</span>
+          <span class="kih-text">AML/KYC compliance frameworks passed all regulatory reviews — no major findings across UAE and South Africa banking audits</span>
         </div>
         <div class="kih-item">
           <span class="kih-num">Controlled Delivery</span>
-          <span class="kih-text">Budget discipline maintained within agreed thresholds across all programs — combining rigorous change control, milestone-based spend tracking, and proactive risk escalation to protect investment</span>
+          <span class="kih-text">Budget discipline held within agreed thresholds across all programs — milestone-based spend tracking, change control, and proactive risk escalation</span>
         </div>
         <div class="kih-item">
           <span class="kih-num">Governance First</span>
-          <span class="kih-text">Built and operated PMO governance structures — SteerCo forums, RAID logs, risk registers, and compliance checkpoints — across regulated banking programs in SA, UAE, UK &amp; APAC</span>
+          <span class="kih-text">Built PMO governance structures — SteerCo forums, RAID logs, risk registers, and compliance checkpoints — across regulated banking programs in SA, UAE, UK &amp; APAC</span>
         </div>
         <div class="kih-item">
           <span class="kih-num">C-Suite to Team</span>
-          <span class="kih-text">Managed stakeholder alignment across the full spectrum — from board-level SteerCo reporting and executive sponsors to delivery leads, regulators, vendors, and engineering teams across 6 countries</span>
+          <span class="kih-text">Stakeholder alignment managed across the full spectrum — board-level sponsors, regulators, vendors, and engineering teams across 6 countries</span>
         </div>
       </div>
     </div>
@@ -824,7 +835,7 @@ footer strong{color:var(--gold);}
         <div class="ach-icon-wrap ach-gold">🏆</div>
         <div>
           <div class="ach-year">FNZ · 2020</div>
-          <div class="ach-title">Director's Appreciation Award — R100K</div>
+          <div class="ach-title">Director's Appreciation — R100K Award</div>
           <div class="ach-desc">Personally recognised by FNZ Director Billal S. for delivering the first-ever Dynamic Fund Dashboard for 13 AMCs — transforming regulatory visibility across the SILICA platform.</div>
         </div>
       </div>
@@ -834,7 +845,7 @@ footer strong{color:var(--gold);}
         <div>
           <div class="ach-year">Investec · 2021</div>
           <div class="ach-title">2nd Place — Investec Digital Hackathon</div>
-          <div class="ach-desc">Designed a POPIA-compliant digital customer outreach solution in a competitive cross-team hackathon — showcasing innovation at the intersection of data privacy and customer engagement.</div>
+          <div class="ach-desc">Built a POPIA-compliant digital customer outreach solution in a competitive cross-team hackathon — demonstrating innovation at the intersection of data privacy and digital engagement.</div>
         </div>
       </div>
 
@@ -843,7 +854,7 @@ footer strong{color:var(--gold);}
         <div>
           <div class="ach-year">Zensar Quarterly Awards</div>
           <div class="ach-title">Cost Management Excellence — RPA</div>
-          <div class="ach-desc">Awarded for leading delivery of 20+ RPA processes across UK, EMEA &amp; APAC — driving 40% reduction in manual effort and significant cost savings for JM Financial operations.</div>
+          <div class="ach-desc">Awarded for leading delivery of 20+ RPA automation processes across UK, EMEA &amp; APAC — driving 40% reduction in manual effort and significant operational cost savings.</div>
         </div>
       </div>
 
@@ -852,7 +863,25 @@ footer strong{color:var(--gold);}
         <div>
           <div class="ach-year">Zensar Quarterly Awards</div>
           <div class="ach-title">Change Management Excellence — CRM</div>
-          <div class="ach-desc">Recognised for orchestrating the multi-region MS Dynamics CRM rollout for JM Financial, achieving 90%+ adoption across Europe, EMEA &amp; APAC through structured training and change governance.</div>
+          <div class="ach-desc">Recognised for the multi-region MS Dynamics CRM rollout for JM Financial, achieving 90%+ user adoption across Europe, EMEA &amp; APAC through structured training and change governance.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-gold">📊</div>
+        <div>
+          <div class="ach-year">FNB South Africa · 2022–23</div>
+          <div class="ach-title">95%+ On-time Delivery — Enterprise Banking</div>
+          <div class="ach-desc">Sustained above-benchmark delivery across FNB's enterprise banking transformation portfolio — including IAM, SME lending, payment gateway modernisation, and hybrid cloud migration.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon-wrap ach-blue">🤝</div>
+        <div>
+          <div class="ach-year">Cross-Program · UAE &amp; SA</div>
+          <div class="ach-title">Zero Compliance Findings — AML/KYC</div>
+          <div class="ach-desc">Delivered AML/KYC governance and audit readiness frameworks across UAE and South Africa banking programs — all regulatory reviews completed without major findings or remediation requirements.</div>
         </div>
       </div>
 
@@ -879,7 +908,7 @@ footer strong{color:var(--gold);}
           <div class="cert-icon">📜</div>
           <div>
             <div class="cert-name">Project Management Professional (PMP)</div>
-            <div class="cert-body">PMI-certified · The globally recognised gold standard in project management, covering governance, delivery, risk, and stakeholder frameworks across industries and methodologies.</div>
+            <div class="cert-body">PMI-certified · Global gold standard covering governance, risk, delivery frameworks, and stakeholder management across complex multi-country programs.</div>
             <span class="cert-badge">PMI · Active</span>
           </div>
         </div>
@@ -887,15 +916,23 @@ footer strong{color:var(--gold);}
           <div class="cert-icon">🔄</div>
           <div>
             <div class="cert-name">Certified Scrum Master (CSM)</div>
-            <div class="cert-body">Scrum Alliance certified · Practitioner of Agile sprint ceremonies, backlog refinement, velocity management, and cross-functional team coaching across 30–40 engineer programs.</div>
+            <div class="cert-body">Scrum Alliance certified · Applied across 30–40 engineer programs — sprint planning, backlog management, velocity tracking, and cross-functional team facilitation.</div>
             <span class="cert-badge">Scrum Alliance · Active</span>
+          </div>
+        </div>
+        <div class="cert-row cert-ai">
+          <div class="cert-icon">🤖</div>
+          <div>
+            <div class="cert-name">AI Tools for Project Management</div>
+            <div class="cert-body">Practical working knowledge of Claude (Anthropic) and ChatGPT (OpenAI) — applied to program documentation, risk analysis, stakeholder reporting, and delivery planning to improve PM productivity.</div>
+            <span class="cert-badge">Claude · ChatGPT · Applied Practice</span>
           </div>
         </div>
         <div class="cert-row cert-li">
           <div class="cert-icon">💡</div>
           <div>
-            <div class="cert-name">Continuous Professional Development</div>
-            <div class="cert-body">Active learner on LinkedIn Learning — covering AI platform delivery, cloud architecture, leadership, and financial services technology to stay current with evolving industry practices.</div>
+            <div class="cert-name">LinkedIn Learning — Continuous Development</div>
+            <div class="cert-body">Ongoing courses in AI in project delivery, cloud platform management, financial services technology, and leadership — staying current with industry practices and emerging PM methodologies.</div>
             <span class="cert-badge">LinkedIn Learning · Ongoing</span>
           </div>
         </div>
